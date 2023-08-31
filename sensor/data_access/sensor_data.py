@@ -1,14 +1,15 @@
 import os,sys
 from typing import Optional
-
+from dotenv import load_dotenv, find_dotenv
 import numpy as np
 import pandas as pd
+import json
 
 from sensor.configuration.mongo_db_connection import MongoDBClient
 from sensor.constant.database import DATABASE_NAME
 from sensor.exception import SensorException
 
-
+load_dotenv(find_dotenv())
 class SensorData:
     """
     This class help to export entire mongo db record as pandas dataframe
